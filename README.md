@@ -26,6 +26,7 @@ Parameters
 Example
 -------
 
+~~~puppet
   node 'node.example.com' {
     class { 'netconsole':
       enable => true,
@@ -33,3 +34,4 @@ Example
       syslogport => 514,
     }
   }
+~~~
