@@ -1,7 +1,7 @@
 #=Class: netconsole::service
 #
 
-class netconsole::service(
+class netconsole::service (
   $service_name = $::netconsole::service_name,
   $enable       = $::netconsole::enable,
 ) inherits netconsole {
