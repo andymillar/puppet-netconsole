@@ -1,0 +1,42 @@
+# This is the configuration file for the netconsole service.  By starting
+# this service you allow a remote syslog daemon to record console output
+# from this system.
+# 
+# This configuration file is managed by puppet.
+
+# The local port number that the netconsole module will use
+<% if @localport -%>
+LOCALPORT=<%= @localport %>
+<% else # if @localport -%>
+# LOCALPORT=6666
+<% end # if @localport -%>
+
+# The ethernet device to send console messages out of (only set this if it
+# can't be automatically determined)
+<% if @dev -%>
+DEV=<%= @dev %>
+<% else # if @dev -%>
+# DEV=
+<% end # if @dev -%>
+
+# The IP address of the remote syslog server to send messages to
+<% if @syslogaddr -%>
+SYSLOGADDR=<%= @syslogaddr %>
+<% else # @syslogaddr -%>
+# SYSLOGADDR=
+<% end # @syslogaddr -%>
+
+# The listening port of the remote syslog daemon
+<% if @syslogport -%>
+SYSLOGPORT=<%= @syslogport -%>
+<% else # if @syslogport -%>
+# SYSLOGPORT=514
+<% end # if @syslogport -%>
+
+# The MAC address of the remote syslog server (only set this if it can't
+# be automatically determined)
+<% if @syslogmacaddr -%>
+SYSLOGMACADDR=<%= @syslogmacaddr %>
+<% else # if @syslogmacaddr -%>
+# SYSLOGMACADDR=
+<% end # if @syslogmacaddr -%>
