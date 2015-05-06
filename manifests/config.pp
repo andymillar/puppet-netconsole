@@ -16,5 +16,6 @@ class netconsole::config (
     owner   => 'root',
     group   => 'root',
     content => template("${module_name}/netconsole.erb"),
+    notify  => Class['Netconsole::Service'],
   }
 }
