@@ -29,7 +29,7 @@ Example
 ~~~puppet
   node 'node.example.com' {
     class { 'netconsole':
-      enable => true,
+      enable     => true,
       syslogaddr => 'syslog.example.com',
       syslogport => 514,
     }
