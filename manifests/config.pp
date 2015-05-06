@@ -8,7 +8,6 @@ class netconsole::config (
   $syslogport    = $::netconsole::syslogport,
   $syslogmacaddr = $::netconsole::syslogmacaddr,
   $config_file   = $::netconsole::params::config_file,
- 
 ) inherits netconsole {
 
   file { $config_file: 
@@ -18,5 +17,4 @@ class netconsole::config (
     group   => 'root',
     content => template("${module_name}/netconsole.erb"),
   }
-
 }

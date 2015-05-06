@@ -5,6 +5,7 @@
 class netconsole::params (
   $enable = true,
 ) {
+
   # For RedHat, this should really already exist. 
   if ($::osfamily == 'RedHat') {
     $package_list = 'initscripts'
