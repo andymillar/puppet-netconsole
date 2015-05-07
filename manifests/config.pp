@@ -10,9 +10,9 @@ class netconsole::config (
   $config_file   = $::netconsole::params::config_file,
 ) inherits netconsole {
 
-  file { $config_file: 
-    mode    => '0644',
+  file { $config_file:
     ensure  => 'present',
+    mode    => '0644',
     owner   => 'root',
     group   => 'root',
     content => template("${module_name}/netconsole.erb"),
