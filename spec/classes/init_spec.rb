@@ -149,5 +149,56 @@ describe 'netconsole' do
     it { should contain_class('netconsole') }
   end
 
+  context 'valid dev' do
+    let (:facts){
+      {
+        :puppetversion          => ENV['PUPPET_VERSION'],
+        :facterversion          => ENV['FACTER_VERSION'],
+        :osfamily               => 'redhat',
+        :operatingsystem        => 'centos',
+        :operatingsystemrelease => '6.6',
+        :concat_basedir         => '/dnf',
+      }
+    }
+
+    let(:params) { { :dev => "em1" } }
+
+    it { should contain_class('netconsole') }
+  end
+
+  context 'valid syslogaddr' do
+    let (:facts){
+      {
+        :puppetversion          => ENV['PUPPET_VERSION'],
+        :facterversion          => ENV['FACTER_VERSION'],
+        :osfamily               => 'redhat',
+        :operatingsystem        => 'centos',
+        :operatingsystemrelease => '6.6',
+        :concat_basedir         => '/dnf',
+      }
+    }
+
+    let(:params) { { :syslogaddr => "syslog.example.com" } }
+
+    it { should contain_class('netconsole') }
+  end
+
+  context 'valid syslogmacaddr' do
+    let (:facts){
+      {
+        :puppetversion          => ENV['PUPPET_VERSION'],
+        :facterversion          => ENV['FACTER_VERSION'],
+        :osfamily               => 'redhat',
+        :operatingsystem        => 'centos',
+        :operatingsystemrelease => '6.6',
+        :concat_basedir         => '/dnf',
+      }
+    }
+
+    let(:params) { { :syslogmacaddr => "10:10:10:10:10:10" } }
+
+    it { should contain_class('netconsole') }
+  end
+
 
 end
