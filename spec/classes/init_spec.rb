@@ -15,6 +15,25 @@ describe 'netconsole' do
     it { should contain_class('netconsole') }
   end
 
+  context 'should fail with a sane warning on !RedHat' do
+    let (:facts){
+      {
+        :puppetversion          => ENV['PUPPET_VERSION'],
+        :facterversion          => ENV['FACTER_VERSION'],
+        :osfamily               => 'debian',
+        :operatingsystem        => 'debian',
+        :operatingsystemrelease => '1',
+        :concat_basedir         => '/dnf',
+      }
+    }
+
+    it do
+      expect {
+        should compile
+      }.to raise_error(RSpec::Expectations::ExpectationNotMetError, /This module only supports RedHat/)
+    end
+  end
+
   context 'too low localport' do
     let (:facts){
       {
