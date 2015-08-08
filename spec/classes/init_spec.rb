@@ -92,5 +92,62 @@ describe 'netconsole' do
   end
 
 
+  context 'too low syslogport' do
+    let (:facts){
+      {
+        :puppetversion          => ENV['PUPPET_VERSION'],
+        :facterversion          => ENV['FACTER_VERSION'],
+        :osfamily               => 'redhat',
+        :operatingsystem        => 'centos',
+        :operatingsystemrelease => '6.6',
+        :concat_basedir         => '/dnf',
+      }
+    }
+
+    let(:params) { { :syslogport => 0 } }
+    it do
+      expect {
+        should compile
+      }.to raise_error(RSpec::Expectations::ExpectationNotMetError, /Expected 0 to be greater or equal to 1/)
+    end
+  end
+
+  context 'too high syslogport' do
+    let (:facts){
+      {
+        :puppetversion          => ENV['PUPPET_VERSION'],
+        :facterversion          => ENV['FACTER_VERSION'],
+        :osfamily               => 'redhat',
+        :operatingsystem        => 'centos',
+        :operatingsystemrelease => '6.6',
+        :concat_basedir         => '/dnf',
+      }
+    }
+
+    let(:params) { { :syslogport => 100000 } }
+    it do
+      expect {
+        should compile
+      }.to raise_error(RSpec::Expectations::ExpectationNotMetError, /Expected 100000 to be smaller or equal to 65535/)
+    end
+  end
+
+  context 'valid syslogport' do
+    let (:facts){
+      {
+        :puppetversion          => ENV['PUPPET_VERSION'],
+        :facterversion          => ENV['FACTER_VERSION'],
+        :osfamily               => 'redhat',
+        :operatingsystem        => 'centos',
+        :operatingsystemrelease => '6.6',
+        :concat_basedir         => '/dnf',
+      }
+    }
+
+    let(:params) { { :syslogport => 512 } }
+
+    it { should contain_class('netconsole') }
+  end
+
 
 end
