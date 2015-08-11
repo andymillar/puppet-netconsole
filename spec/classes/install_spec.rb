@@ -13,7 +13,7 @@ describe 'netconsole::install' do
       }
     }
     it { should contain_class('netconsole::install') }
-    it { should contain_package('netconsole') }
+    it { should contain_package('initscripts') }
   end
 
   context 'with settings for all parameters' do
