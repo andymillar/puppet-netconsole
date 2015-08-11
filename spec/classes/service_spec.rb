@@ -75,7 +75,7 @@ describe 'netconsole::service' do
       }
     }
     let(:params) { { 
-      :enable   => 'false'
+      :enable   => false
     } }
 
     it { should contain_class('netconsole::service') }
