@@ -33,7 +33,7 @@ describe 'netconsole::install' do
     } }
 
     it { should contain_class('netconsole::install') }
-    it { should contain_package('foo')
+    it { should contain_package('foo') }
 
   end
 
