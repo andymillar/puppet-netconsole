@@ -2,9 +2,8 @@
 #
 # Set the defaults for netconsole here. Blank is probably reasonable.
 
-class netconsole::params (
-  $enable = true,
-) {
+class netconsole::params {
+  $enable = true
 
   # For RedHat, this should really already exist. 
   if ($::osfamily == 'RedHat') {
