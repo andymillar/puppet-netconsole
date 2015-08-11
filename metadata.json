@@ -1,14 +1,26 @@
 {
   "name": "andymillar-netconsole",
   "version": "0.1.0",
-  "author": "andymillar",
+  "author": "Andy Millar <andy@andymillar.co.uk>",
   "summary": "A module to install and manage netconsole, a service to remote syslog console output.",
   "license": "CC0 1.0 Universal",
   "source": "https://github.com/andymillar/puppet-netconsole.git",
   "project_page": "https://github.com/andymillar/puppet-netconsole",
   "issues_url": "https://github.com/andymillar/puppet-netconsole/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {
+      "name":"puppetlabs-stdlib",
+      "version_requirement":">= 1.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [ "6" ] 
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [ "6" ] 
+    }
   ]
 }
-
