@@ -63,7 +63,7 @@ describe 'netconsole::service' do
 
   end
 
-  context 'with settings with enabled service parameters' do
+  context 'with settings with disabled service parameters' do
     let (:facts){
       {
         :puppetversion          => ENV['PUPPET_VERSION'],
