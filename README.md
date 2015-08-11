@@ -1,7 +1,7 @@
 puppet-netconsole
 =================
 
-[![Build Status](https://travis-ci.org/timhughes/puppet-netconsole.svg)](https://travis-ci.org/timhughes/puppet-netconsole)
+[![Build Status](https://travis-ci.org/andymillar/puppet-netconsole.svg)](https://travis-ci.org/andymillar/puppet-netconsole)
 
 Description
 -----------
