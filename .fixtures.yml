@@ -1,7 +1,6 @@
 fixtures:
-  forge_modules:
-    stdlib: "puppetlabs-stdlib"
   repositories:
     #epel: "git://github.com/stahnma/puppet-module-epel.git"
+    stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
   symlinks:
     netconsole: "#{source_dir}"
