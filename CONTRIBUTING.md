@@ -18,7 +18,7 @@ Checklist
       number(s)), and should skip the full stop.
 
     - If you have a GitHub issue number, associate the issue in the message.
-      End the commit message with "Fixes GH-1234".
+      End the commit message with "Fixes #1234".
 
     - The body should provide a meaningful commit message, which:
 
